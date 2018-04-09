@@ -7,5 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.3",
+    "imap": "^0.8.19",
+    "mailin": "^3.0.4",
+    "nodemailer": "^4.6.4"
+  }
 }
