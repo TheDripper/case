@@ -1,18 +1,25 @@
 {
   "name": "case",
   "version": "1.0.0",
-  "description": "on the case",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://thedripper@github.com/thedripper/case.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thedripper/case/issues"
+  },
+  "homepage": "https://github.com/thedripper/case#readme",
   "dependencies": {
     "axios": "^0.18.0",
     "express": "^4.16.3",
-    "imap": "^0.8.19",
-    "mailin": "^3.0.4",
-    "nodemailer": "^4.6.4"
+    "knex": "^0.14.6",
+    "mysql": "^2.15.0"
   }
 }
