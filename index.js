@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const axios = require('axios');
 const fs = require('fs');
-const pics = './pics/';
+const pics = './public/pics';
 app.set('views',__dirname + '/views');
 app.set('view engine','jsx');
+app.use(express.static('public'));
 app.engine('jsx',require('express-react-views').createEngine());
 
 app.get('/loader',async (req,res)=>{
