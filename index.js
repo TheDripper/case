@@ -1,19 +1,17 @@
 const express = require('express');
 const app = express();
 const axios = require('axios');
-const knex = require('knex')({
-	client: 'mysql',
-	connection: {
-		host: '127.0.0.1',
-		user: 'root',
-		password: 'root',
-		database: 'front'
-	}
-});
-app.get('/',(req,res)=>{
-	knex('wp_posts').select('post_title').then(posts=>{
-		console.log(posts);
-		res.send(posts);
+const fs = require('fs');
+const pics = './pics/';
+app.set('views',__dirname + '/views');
+app.set('view engine','jsx');
+app.engine('jsx',require('express-react-views').createEngine());
+
+app.get('/loader',async (req,res)=>{
+	let files = [];
+	fs.readdirSync(pics).forEach(file=>{
+		files.push(file);
 	});
+	res.render('index',{files: files});
 });
 app.listen(3000,()=>console.log('brick'));
