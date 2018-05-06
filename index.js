@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const axios = require('axios');
 const fs = require('fs');
+const junk = require('junk');
 const pics = './public/pics';
 app.set('views',__dirname + '/views');
 app.set('view engine','jsx');
@@ -13,6 +14,7 @@ app.get('/loader',async (req,res)=>{
 	fs.readdirSync(pics).forEach(file=>{
 		files.push(file);
 	});
+	files = files.filter(junk.not);
 	res.render('index',{files: files});
 });
 app.listen(3000,()=>console.log('brick'));
